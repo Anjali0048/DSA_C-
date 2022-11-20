@@ -1,26 +1,26 @@
 #include<iostream>
 using namespace std;
 
-int peak(int arr[], int n){
+int getPivot(int arr[], int n){
     int s=0;
     int e=n-1;
+    int mid = s+(e-s)/2;
 
     while(s<e){
-        int mid = s+(e-s)/2;
-        if(arr[mid]<arr[mid+1]){
+
+        if(arr[mid]>=arr[0]){
             s = mid+1;
         }
         else{
             e = mid;
         }
+        mid = s+(e-s)/2;
     }
     return s;
 }
 
 int main(){
-    
-    int arr[] = {1,3,5,10,7,5,3,0};
-    cout<<peak(arr,8);
-
+    int arr[] = {3,8,10,17,1};
+    cout<<"pivot is : "<<getPivot(arr,5)<<endl;
     return 0;
 }
