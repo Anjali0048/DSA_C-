@@ -9,7 +9,7 @@ struct Node {
 
 class Solution{
     public:
-    
+
     pair<bool,int> isBalanceFast(Node* root){
         if(root == NULL){
             pair<bool,int> p = make_pair(true,0);
@@ -18,7 +18,6 @@ class Solution{
         
         pair<int,int> left = isBalanceFast(root->left);
         pair<int,int> right = isBalanceFast(root->right);
-        
         
         bool leftAns = left.first;
         bool rightAns = right.first;
